@@ -1,0 +1,287 @@
+/* Fonts */
+/* Ubuntu */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+/* Overpass */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    max-width: 100%;
+    overflow-x: hidden;
+    
+    
+}
+:root{
+    --light-red: hsl(356, 100%, 66%);
+    --very-light-red: hsl(355, 100%, 74%);
+    --very-dark-blue: hsl(208, 49%, 24%);
+    --shapes: hsla(2, 92%, 66%, 0.363);
+}
+.nav{
+    position: fixed;
+    padding: 80px 100px 10px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    width:100%;
+    max-width: 90%;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+    
+}
+.nav-left{
+    display: flex;
+}
+.nav-hide{
+    display: none;
+    
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+    padding: 15px 40px 20px 60px;
+    font-family: 'Overpass';
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.link{
+    display: flex;
+    padding-right: 50px;
+}
+.link:hover{
+    cursor: pointer;
+    color: gray;
+}
+.icon-arrow{
+    background-image: url("./images/icon-arrow-light.svg");
+    background-repeat: no-repeat;
+    height: 10px;
+    width: 10px;
+    position: relative;
+    top:6px;
+    left: 10px;
+}
+.icon-arrow:hover{
+    background-image: url("./images/icon-arrow-dark.svg");
+    cursor: pointer;
+
+
+}
+.logo{
+    font-family: 'Ubuntu',sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.header{
+    height: 350px;
+    width: 110%;
+    border-radius: 60px;
+    background: linear-gradient(to right,hsl(13, 100%, 72%),hsl(353, 100%, 62%),hsl(353, 100%, 62%));
+    position: relative;
+    top:-50px;
+    overflow: hidden;
+      
+}
+
+.circle{
+    position: absolute;
+    bottom: -40%;
+    left: 10%;
+    height: 400px;
+    width: 400px;
+    background-color: var(--shapes);
+    border-radius: 100%;
+    z-index:1;
+   
+}
+
+.squares{
+    height:200px;
+    width: 300px;
+    background-color: var(--shapes);
+    position: absolute;
+    border-radius: 50px;
+    z-index: 0;
+
+}
+.squares.sq1{
+    transform: rotate(20deg);
+    top:-100px;
+    right: 400px;
+}
+.squares.sq2{
+    top: 10px;
+    right:0%;
+    transform: rotate(20deg);
+}
+.squares.sq3{
+    right: 80px;
+    bottom: -100px;
+    transform: rotate(20deg);
+}
+.sign-up-button{
+    width: 100px;
+    font-weight: 600;
+    color: hsl(353, 100%, 62%);
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0px 0px 0px 20px;
+    position: relative;
+    bottom: 10px;
+}
+.sign-up-button:hover{
+    border: 2px solid white;
+    background-color:hsl(353, 100%, 62%);
+    color: white;
+    cursor: pointer;
+}
+#future-design{
+    font-family: 'Overpass';
+}
+.top-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0px;
+    font-size: large;
+    color: var(--very-dark-blue);
+}
+h3{
+    color: var(--very-dark-blue); 
+}
+.sec-row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.left{
+max-width: 40%;
+text-align: justify;
+}
+.illustration-editor-desktop{
+    object-fit: contain;
+    width: 500px;
+}
+.desc{
+    margin: 20px 0px 40px 40px;
+}
+.desc > p{
+    padding: 30px 0px 20px 0px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: hsl(207, 13%, 34%);
+
+}
+
+.parallellogram{
+    width: 100%;
+    height: 300px;
+    transform: skew(20deg);
+    background: linear-gradient(to right,hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+    border-radius: 50px;
+    z-index: 0;
+    display: flex;
+    
+}
+.left-side{
+    width: 50%;
+    object-fit: contain;
+    overflow: hidden;
+}
+.circle-pattern{
+    width: 650px;
+    position: relative;
+    top: -300px;
+    object-fit: contain;
+    left: 0px;
+    z-index: 0;
+}
+.right-side{
+    width: 50%;
+    display: flex;
+
+}
+.phones{
+    position: relative;
+    object-fit: contain;
+    width: 500px;
+    transform: skew(-20deg);
+   left: -150%;
+   top:-50px;
+    z-index: 2;
+}
+.right-text{
+    transform: skew(-20deg);
+    font-family: 'Overpass',sans-serif;
+    color: white;
+    width: 200%;
+}
+#laptop{
+    margin-top: 100px;
+    display: flex;
+}
+.laptop-left{
+    width: 50%;
+}
+.laptop-right{
+    width: 50%;
+}
+.laptop-illustration{
+    object-fit: contain;
+    width: 500px;
+    position: relative;
+    left: -26%;
+}
+.laptop-text{
+    margin-top: 100px;
+    font-family: 'Overpass',sans-serif;
+    color: var(--very-dark-blue);
+}
+.laptop-text > h2{
+    margin-bottom: 10px;
+}
+.laptop-text > p{
+    margin-bottom: 50px;
+}
+footer{
+    height: 300px;
+    border-top-right-radius: 70px;
+    background-color: hsl(240, 10%, 16%);
+    width: 100%;
+    position: relative;
+    border-bottom-right-radius: 0px;
+    color: white;
+    font-family: 'Ubuntu',sans-serif;
+}
+.flex-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    flex-wrap: wrap;
+}
+.flex-col > ul{
+    list-style: none;
+}
+.listhead{
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.flex-col > ul >li{
+    font-family: 'Overpass';
+    font-size: 14px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
