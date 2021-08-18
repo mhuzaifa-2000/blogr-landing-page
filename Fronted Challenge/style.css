@@ -73,6 +73,29 @@ html,body{
 
 
 }
+.container {
+cursor: pointer;
+display: none;
+}
+.bar1, .bar2, .bar3 {
+width: 35px;
+height: 5px;
+background-color: #fff;
+margin: 6px 0;
+transition: 0.4s;
+}
+
+.change .bar1 {
+-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+-webkit-transform: rotate(45deg) translate(-8px, -8px);
+transform: rotate(45deg) translate(-8px, -8px);
+}
 .logo{
     font-family: 'Ubuntu',sans-serif;
     color: white;
@@ -90,7 +113,94 @@ html,body{
     overflow: hidden;
       
 }
+.ham-menu{
+    display: none;
+    position: fixed;
+    height: fit-content;
+    width: 80vw;
+    z-index: 10;
+    background-color: white;
+    top:80px;
+    left: 10%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0,0.3);
+    font-family: 'Ubuntu', sans-serif;
+    padding-bottom: 50px;
+    overflow-y: scroll;
 
+}
+.active{
+    display: block;
+}
+.ham-menu::-webkit-scrollbar {
+    display: none;
+  }
+.ham-menu-cont{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color:var(--very-dark-blue);
+}
+.ham-item{
+    padding: 30px 0px;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+.icon-arrow-dark{
+    display: inline-block;
+    background-image: url(./images/icon-arrow-dark.svg);
+    background-repeat: no-repeat;
+    height: 10px;
+    width: 10px;
+    margin-left: 10px;
+}
+hr{
+    margin-top: 30px;
+    width: 80%;
+    border-bottom: 0px;
+    border-top: 1px solid lightgray;
+    height: 0px;
+}
+.ham-login{
+    background-color: transparent;
+    color:var(--very-dark-blue);
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 20px 60px;
+    border: 0px;
+    border-radius: 30px;
+    margin-top: 30px;
+    font-family: 'Overpass';
+    font-size: 1.5rem;
+}
+.submenu{
+    display: none;
+    padding: 30px 0px 0px 0px;
+    width: 80%;
+    height: fit-content;
+    background-color: hsl(240, 3%, 93%);
+    border-radius: 10px;
+}
+.submenu-item{
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+.ham-signup{
+    background:linear-gradient(to right,hsl(13, 100%, 72%),hsl(353, 100%, 62%),hsl(353, 100%, 62%));
+    color:white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 20px 60px;
+    border: 0px;
+    border-radius: 50px;
+    margin-top: 30px;
+    font-family: 'Overpass';
+}
 .circle{
     position: absolute;
     bottom: -40%;
@@ -161,6 +271,7 @@ h3{
 }
 .sec-row{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -182,46 +293,53 @@ text-align: justify;
     color: hsl(207, 13%, 34%);
 
 }
-
+#wrap{
+    width: 100%;
+    height: fit-content;
+    background: linear-gradient(to right,hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+    border-radius: 0px 200px 0px 200px;
+}
 .parallellogram{
     width: 100%;
-    height: 300px;
-    transform: skew(20deg);
-    background: linear-gradient(to right,hsl(237, 17%, 21%), hsl(237, 23%, 32%));
-    border-radius: 50px;
-    z-index: 0;
+    height: 100%;
+    background-image: url('./images/bg-pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-size: 50%;
     display: flex;
     
 }
 .left-side{
     width: 50%;
-    object-fit: contain;
-    overflow: hidden;
+    height: 100%;
 }
-.circle-pattern{
-    width: 650px;
-    position: relative;
-    top: -300px;
-    object-fit: contain;
-    left: 0px;
-    z-index: 0;
-}
-.right-side{
-    width: 50%;
-    display: flex;
 
+.right-side{
+    min-width: 50%;
+    max-width: 50%;
+    min-height: 100%;
+    display: grid;
+    align-items: center;
+}
+.right-text{
+    max-width: 80%;
+    text-align: left;
+    font-family: 'Overpass';
+}
+.right-text > h1{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.right-text > p{
+    font-size: 1.4rem;
+    line-height: 1.5;
 }
 .phones{
     position: relative;
-    object-fit: contain;
-    width: 500px;
-    transform: skew(-20deg);
-   left: -150%;
-   top:-50px;
-    z-index: 2;
+
+    height: 500px;
+    left: 20px;
 }
 .right-text{
-    transform: skew(-20deg);
     font-family: 'Overpass',sans-serif;
     color: white;
     width: 200%;
@@ -284,4 +402,76 @@ footer{
     font-size: 14px;
     font-weight: 200;
     margin-bottom: 10px;
+}
+@media screen and (max-width: 1000px) {
+    .parallellogram{
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+        padding-top: 50px;
+        
+    }
+    .right-side{
+        min-width: 80%;
+    }
+    .right-text{
+        text-align: center;
+    }
+    .left-side{
+        display: none;
+    }
+}
+@media screen and (max-width: 870px) {
+    .container{
+        display: inline-block;
+        margin-right: 70px;
+    }
+    .nav-links{
+        display: none;
+    }
+}
+@media screen and (max-width: 850px) {
+    .top-head>h2{
+        text-align: center;
+        margin-left: -125px;
+    }
+    .sec-row{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .left{
+        max-width: 100%;
+        margin-right: 200px;
+        text-align: center;
+    }
+    .desc{
+        width: 100%;
+    }
+    #laptop{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 700px) {
+    .logo{
+        margin-left: -50px;
+    }
+    footer{
+        height: fit-content;
+        text-align: center;
+    }
+    .flex-row{
+        flex-direction: column;
+        align-items: center;
+    }
+    .flex-col{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .logo.flex-col{
+        margin-left: 5px;
+        letter-spacing: 4px;
+    }
 }
